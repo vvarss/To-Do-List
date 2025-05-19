@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism To-Do List App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div class="container">
+        <div class="todo-app">
+            <h1>To-Do List</h1>
+            <div class="stat-container">
+                <div class="details">
+                    <h3>Keep it Up!</h3>
+                    <div id="progressbar">
+                        <div id="progress"></div>
+                    </div>
+                </div>
+                <div class="stats-number">
+                    <p id="numbers">0 / 0</p>
+                </div>
+            </div>
+            <form class="input-area">
+                <input type="text" id="task-input" placeholder="Add a new task..">
+                <button type="submit" id="add-task-btn"><i class="fa-solid fa-plus"></i></button>
+            </form>
+            <div class="todos-container">
+                <ul id="task-list">
+                    <!-- <li>CSSnippets</li>
+                    <li>html</li>
+                    <li>CSS</li> -->
+                </ul>
+                <img class="empty-image" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIPEBIPEBAQDg8PEA4PEBAQEhASFRAQFREWFxURExYYHiggGBolGxUVITEhJSkrLi4zFx8zODMtNygtLisBCgoKCg0NGg8NFSsZFRkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAbAAEAAwEBAQEAAAAAAAAAAAAAAQMEAgUGB//EADUQAAIBAgMFBwMDAwUAAAAAAAABAgMRBBIhIjFBUWEFExRxgZGhBjKxM1LBI2KiQ1OS8PH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A/cQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAV11JxkoNRm4vK2rpSto2iMNGShFVGpTSWaSVk5cWkWgALkSklq2kub0MM8DOcnKdaplvswpvu0l/c1rJ+tugG65NzNi8IqtryqQtf9Ocob+dt+4mjhFGDgpVGnfWU5SkrrhJ6oDRcGPD9nRhJSU60rcJ1ZyXqm9RiOz1Ulmc60b20hVnFeyYGy5FyirhFKCp5qiSttRnJSdlxktWRhMGqd7SqSv/uTlO3lfcBpIuYl2ZHNm7yvvzW76pbfe1r7uhbisGqlm51I2v8Ap1JQv523gaQZe4lTpuNKTc9XGVVynr11vYdn4vvYZmssk5QnHflnF2kv+80BqAAAAAAAAAAAAAAAAIbJKcS9PMCqpXb3aIqv5gALnLqpSUXJKUr5Y31fkiXJLVtJLe3okubLcD2fCleS2pybcqkrOUvXguiA83tKTnajGFSUs9Fu0JZUlOMneW7cj3jH2pXlTp5o2vnpR110lUjF/DZsAAAAAAAAAAAAzyJY6LqypqFRNTUHJQk4uTSeslu3reeuZsLhskqkr372pna/a8kY2/x+QMzqJSyOSU7Xy31tzsdXL8bgYVo2nFP9st0oPhKL3pmeKSVlLPl2XLS7a0d7cQOlJ8y+jW4P3M4A9AHNN3SZ0AAAAAAAAAKcTHTyLgwPPBdUoNbtVyKsr5P2ApxVLPCcP3wlH3TRuwObuoZ9J5IZtb7VlfUz5XyfsOya8pKcZu8qdWpDcls6OP8AjJAX46UFG9RXhmprdfac1l+bGhGXtHDOrDImlt05Xf8AbNS/g1AADNXq8F6sCydZLqyp4l8kUnM5qKbbUUtW27JLqwNHiHyRZCunv0MVKrGazRkpLnFpr4OwPQBko1baPd+DWAMPZ1NqeIbTSlWvFviu7grr1TNxkwWJc5VotK1KpkVuKyRlr6yYGtnjdnUXCmlLSbc5T3fdKTk/ybO18RKnRnKLtOyjB2TtOTUY7+rRyovk/YCASoPk/Y0UaFtX7AWwVkl0OgAAAAAAAAAABDYEgpliFw1OfE9PkDQZoVo97KklaWSNVuy2k24+r2fwT4np8lMYKVaNW9moSp202k5J/Fn7gR2zJqlstp95Q+297d7G+7obzNj8T3UM9s21Tja9vumo3+TSBxWlZGI0Yp7vUzgDxfquT7hLnVjfrsyM+I+p7SajSzRTaTc7N9bW0PP7V7aeIgoOmoWkpXUm9yatu6gb/o9/qrh/TfrtH0Z8R2T2o8NmtBTz5d8rWtfo+Z6Ufql31oq3G03e3TQD6U1Yed1bkY6c1KKkt0kpLyaujRhXq/IDUZsKoZqmT7s/9Tf9+WP8ZTSZMHh3CVaTtapVzxtyyRjr7MDrFVoqVOElmdWTUVZOzjFyu78rfg0mPE013sKl23TjUSjw2rbXsvks8T0+QNAM/ienyTHErirAXghO5IAAAAAAAAESdlcx1Kjl5ci3FS3L1M4AHUI3EoW1umuaA5M2NptulKKzShWpSsv23yy+JM0leIlJQk4feoycb/uS0v62A2Y2lCcMs3ljmg73S2lJOKv5pGg8zFXxGHg4K7m8PUtotFOMnv6JnpgUYpaLzMxuqRumjC0B5Nb6fozk5WnG7u1GVlforaHl9udkU6FNTg5tuajtNPSzfLofVHkfU9CU6OzFycZqTS1drNXt6oDxewOzYYjPnzbGS2V2336dD2Y/TdBP/UfRyWvwZ/pOhKKqSlFxUnBRurXtmv8AlH0AERVkktEkkkuCNGFWrZQbKELLq9QLGYOz6jlOum21GtlinwXdQdl6tm9mbDYhTlUSVu6nkbfF5Iyv8oDEqcu/rTkrJ91CF+MYwvf/AJSfsXFGBxEqtNVJWvNzasrbOZ5f8bF4AA6lGyT5q4CE2np/6bISurmEvwstWvUDSAAAAAAADLid/oUmjFR3P0M4HVOVrp7noyZSVrK/N3OAAAAFNXFqNC9G0e7q06NraL+rGMkl5M9Y8qnCNKNSVTahUrU5Zct8snkivPaSZ6oAprUb6rf+S4Aee1YG6cE96KnhlzYGYGlYZc2WQppbkBVRo8X6I0AADDNQoKtVcm1KXeTWjs8sY2SXkvc3HjVMFKSxEZbEZ4inUTtfNCKp3t55WgL6cFFKMUoxSSSXBLgdAAdQnbgmWzmrR2VqvYoDYEt+h3h/uXqVl+Fjq36AaQAAAAAAARJX0MdSDj/BtIauBgB1UVm0cgAABhxGFlUrJK6jOEczs2k6daM0vVOR7yPB7XqSjTi48atFSte6j3i3W62Xqe8AAAAAAAAAAAA8GpWnUxOVrYoVKuqTt+lTST5vbk/Q948elXU6tZQSUYzipSV7yq5bSv5JRQGgAhu2rdkuLAkEJ31WqZ1BXaXUCYQb0RshGysiYxS3aEgAAAAAAAAAABlxMdb8yk3TjdWMdSm4+XMDkAAc1IKScZK8WrNc0cPE14ydo06sG9Np05RXJ6NS+C0AdYrGTVu7pqpvveahb4dxRxk3FudNQkr2ipqSemmttNTkAc0MdVckp0VCPGSqqVtOVtScRjqqlaFFTjZauoo68rWJAHc8ZNQTVNOppeGdJLntWOcLjJyv3lJU1pa01O/wrEADh4+tmt3Ect7Zu9juvvtblwLcVjJxt3dJVL3veahblwdzkAPETnTaa7io7pNNTy8pLS1yrC4eNOKhFaLi9W298m+LZaABRjsKq1OVOTaUrarerO/8F4ApweHVKnGnFtqKsm971ua8PG8vI4hBvca6cMqsB2AAAAAAAAAAAAABoACt0Y8iO4j192WgCrw8evux4ePX3ZaAKvDx6+7Hh49fdloAq8PHr7seHj192WgCrw8evux4ePX3ZaAKvDx6+7Hh49fdloAq8PHr7seHj192WgCrw8evuyVRjyLABCRIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH//2Q==" alt="empty">
+            </div>
+        </div>
+     </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
